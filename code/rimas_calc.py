@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import cgi
-#import cgitb
+#import cgitbchmod 755 script.py
 #cgitb.enable()
 
 import sys
@@ -73,46 +73,45 @@ omodedict = {'0': 'Photometry', '30': 'R = 30', '4000': 'R = 4000'}
 modedict = {'L': 'Limiting Magnitude Calculator', 'E': 'Exposure Time Calculator', 
     'Not Set': 'Error'}
 
-
-print "Content-Type: text/html"     # HTML is following
-print                               # blank line, end of headers
-print '<html>'
-print '<head>'
-print '<title>RIMAS %s</title>' % (modedict[mode])
-print """
+print("Content-Type: text/html")  # HTML is following
+print()                              # blank line, end of headers
+print ('<html>')
+print ('<head>')
+print ('<title>RIMAS %s</title>' % (modedict[mode]))
+print ("""
 </head>
 <body>
-"""
-print '<h2> %s %.1f</h2>' % (outtext, result)
+""")
+print ('<h2> %s %.1f</h2>' % (outtext, result))
 
-print '<h3>%s Inputs:</h3>' % (modedict[mode])
-print """
+print ('<h3>%s Inputs:</h3>' % (modedict[mode]))
+print ("""
 <div>
  <table style="margin-left:20px;" width="300px" border="1" align="left" cellpadding="5">
- """
-print '<tr align="left">'
-print ' <th>%s:</th>' % (labels[0])
-print ' <td>%s</td>' % v1
-print '</tr>'
-print '<tr align="left">'
-print ' <th>%s:</th>' % (labels[1])
-print ' <td>%s</td>' % v2
-print '</tr>'
-print '<tr align="left">'
-print ' <th>%s:</th>' % (labels[2])
-print ' <td>%s</td>' % v3
-print '</tr>'
-print '<tr align="left">'
-print ' <th>%s:</th>' % (labels[3])
-print ' <td>%s</td>' % omodedict[v4]
-print '</tr>'
-print """
+ """)
+print ('<tr align="left">')
+print (' <th>%s:</th>' % (labels[0]))
+print (' <td>%s</td>' % v1)
+print ('</tr>')
+print ('<tr align="left">')
+print (' <th>%s:</th>' % (labels[1]))
+print (' <td>%s</td>' % v2)
+print ('</tr>')
+print ('<tr align="left">')
+print (' <th>%s:</th>' % (labels[2]))
+print (' <td>%s</td>' % v3)
+print ('</tr>')
+print ('<tr align="left">')
+print (' <th>%s:</th>' % (labels[3]))
+print (' <td>%s</td>' % omodedict[v4])
+print ('</tr>')
+print ("""
 </table>
 </div>
-""" 
+""" )
 
 
-print """
+print ("""
 <div style = "clear:both;"></div>
 <div>
 <h3>Assumptions:</h3>
@@ -155,16 +154,16 @@ print """
   </tr>
   <tr align="left">
     <th>Observing mode efficiency:</th>
-"""
-print  '<td> %s </td>' % (str(eta))
-print """  
+""")
+print ('<td> %s </td>' % (str(eta)))
+print ("""  
   </tr>  
 </table>
 </div>
-""" 
+""" )
 
-print '</body>'
-print '</html>'
+print ('</body>')
+print ('</html>')
 
 
 
